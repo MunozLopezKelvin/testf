@@ -6,8 +6,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
-Laravel\Socialite\SocialiteServiceProvider::class;
-use Laravel\Socialite\Facedes\Socialite;
+
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -23,6 +22,12 @@ class EventServiceProvider extends ServiceProvider
         \SocialiteProviders\Manager\SocialiteWasCalled::class => [
             // ... other providers
             \SocialiteProviders\Facebook\FacebookExtendSocialite::class.'@handle',
+        ],
+        SocialiteWasCalled::class => [
+            // Proveedores de autenticación adicionales
+            'SocialiteProviders\GitHub\GitHubExtendSocialite@handle',
+            'SocialiteProviders\Google\GoogleExtendSocialite@handle',
+            // Agrega otros proveedores aquí
         ],
     ];
 
