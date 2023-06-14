@@ -27,6 +27,7 @@ class EventServiceProvider extends ServiceProvider
             // Proveedores de autenticación adicionales
             'SocialiteProviders\GitHub\GitHubExtendSocialite@handle',
             'SocialiteProviders\Google\GoogleExtendSocialite@handle',
+            FacebookExtendSocialite::class.'@handle',
             // Agrega otros proveedores aquí
         ],
     ];
