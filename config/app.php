@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
+Laravel\Socialite\SocialiteServiceProvider::class;
+
 
 return [
 
@@ -182,6 +184,8 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 
