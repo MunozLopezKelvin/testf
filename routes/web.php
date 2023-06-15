@@ -40,8 +40,6 @@ Route::get('/facebook-callback', function () {
 
         Auth::login($userNew);
     }
-    return Socialite::driver('facebook')
-    ->redirectUrl('https://testf.up.railway.app/auth/callback')
-    ->redirect();
+    return redirect('/');
     //$userExists = User::where('external_id', $user->id)->where('external_auth','facebook')->exists();
 });
